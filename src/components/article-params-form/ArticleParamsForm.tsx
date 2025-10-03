@@ -31,7 +31,6 @@ type ArticleParamsFormProps = {
 };
 
 export const ArticleParamsForm = ({ onApply, onReset }: ArticleParamsFormProps) => {
-	// initial form values copied from constants
 	const initialState: ArticleStyles = {
 		fontFamilyOption: defaultArticleState.fontFamilyOption,
 		fontSizeOption: defaultArticleState.fontSizeOption,
@@ -44,7 +43,6 @@ export const ArticleParamsForm = ({ onApply, onReset }: ArticleParamsFormProps) 
 	const [values, setValues] = useState(initialState);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-	// Small helper to reduce repetition for onChange handlers
 	const makeChangeHandler = <K extends keyof ArticleStyles>(key: K) => (
 		selected: ArticleStyles[K]
 	) => {

@@ -21,16 +21,15 @@ const App = () => {
 
 	const resetStyles = useCallback(() => setAppliedStyles(defaultArticleState), []);
 
-	const cssVars = {
-		'--font-family': appliedStyles.fontFamilyOption.value,
-		'--font-size': appliedStyles.fontSizeOption.value,
-		'--font-color': appliedStyles.fontColor.value,
-		'--container-width': appliedStyles.contentWidth.value,
-		'--bg-color': appliedStyles.backgroundColor.value,
-	} as CSSProperties;
 
 	return (
-		<main style={cssVars} className={styles.main}>
+		<main style={{
+			'--font-family': appliedStyles.fontFamilyOption.value,
+			'--font-size': appliedStyles.fontSizeOption.value,
+			'--font-color': appliedStyles.fontColor.value,
+			'--container-width': appliedStyles.contentWidth.value,
+			'--bg-color': appliedStyles.backgroundColor.value,
+		} as CSSProperties} className={styles.main}>
 			<ArticleParamsForm onReset={resetStyles} onApply={applyStyles} />
 			<Article />
 		</main>
